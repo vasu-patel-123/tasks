@@ -6,8 +6,8 @@ function App(): React.JSX.Element {
         <div className="App">
             <header className="App-header">Vasu Patel</header>
             <p>
-                Hello World Edit <code>src/App.tsx</code> and save. This page
-                will automatically reload.
+                Hello World COS420 Edit <code>src/App.tsx</code> and save. This
+                page will automatically reload.
             </p>
         </div>
     );
