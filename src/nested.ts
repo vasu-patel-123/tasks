@@ -165,19 +165,16 @@ export function editOption(
     const editedQuestions: Question[] = [];
     for (let i = 0; i < questions.length; i++) {
         if (questions[i].id === targetId) {
+            const options = [...questions[i].options];
             if (targetOptionIndex === -1) {
-                editedQuestions.push({
-                    ...questions[i],
-                    options: [...questions[i].options, newOption],
-                });
+                options.push(newOption);
             } else {
-                editedQuestions.push({
-                    ...questions[i],
-                    options: questions[i].options.map((option, index) =>
-                        index === targetOptionIndex ? newOption : option,
-                    ),
-                });
+                options[targetOptionIndex] = newOption;
             }
+            editedQuestions.push({
+                ...questions[i],
+                options,
+            });
         } else {
             editedQuestions.push(questions[i]);
         }
