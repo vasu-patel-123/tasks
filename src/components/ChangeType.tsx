@@ -1,7 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, JSX } from "react";
 import { Button } from "react-bootstrap";
-import { QuestionType } from "../interfaces/question";
 
-export function ChangeType(): React.JSX.Element {
-    return <div>Change Type</div>;
+export function Counter(): JSX.Element {
+    const [value, setValue] = useState<number>(0);
+    return (
+        <div>
+            <div>{value}</div>
+            <Button
+                onClick={() => {
+                    setValue(value + 1);
+                }}
+            >
+                Add One
+            </Button>
+        </div>
+    );
 }
